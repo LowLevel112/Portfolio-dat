@@ -3,11 +3,12 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Java Exception Handling | Dev Blog</title>
+  <title>Java Exception Handling | DevFolio Blog</title>
 
   <!-- Meta For No Index -->
   <meta name="robots" content="noindex, Nofollow, Noimageindex">
-  <meta name="description" content="Hướng dẫn toàn diện về Java Exception Handling - từ cơ bản đến nâng cao. Tìm hiểu cách xử lý lỗi, tạo custom exceptions và best practices.">
+  <meta name="description"
+    content="Hướng dẫn toàn diện về Java Exception Handling - từ cơ bản đến nâng cao. Tìm hiểu cách xử lý lỗi, tạo custom exceptions và best practices.">
   <meta name="keywords" content="Java Exception, Exception Handling, Java Programming, Error Handling, Try Catch">
 
   <!-- mobile responsive meta -->
@@ -22,7 +23,9 @@
   <link rel="icon" href="images/favicon.png" type="image/x-icon" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap&subset=vietnamese" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap&subset=vietnamese"
+    rel="stylesheet">
 
   <style>
     /* ===== VARIABLES ===== */
@@ -520,7 +523,7 @@
       .navbar-toggler {
         display: flex;
       }
-      
+
       .nav-list {
         flex-direction: column;
         position: absolute;
@@ -533,42 +536,42 @@
         padding: 20px;
         gap: 10px;
       }
-      
+
       .nav-list.active {
         display: flex;
       }
-      
+
       .navbar-nav {
         flex-direction: column;
         width: 100%;
         gap: 5px;
       }
-      
+
       .nav-item {
         width: 100%;
       }
-      
+
       .nav-link {
         padding: 12px 15px;
         border-radius: 6px;
         text-align: center;
       }
-      
+
       .main-nav-social {
         justify-content: center;
         padding-top: 15px;
         border-top: 1px solid #eee;
         margin-top: 15px;
       }
-      
+
       .navbar-toggler.active .icon-bar:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
       }
-      
+
       .navbar-toggler.active .icon-bar:nth-child(2) {
         opacity: 0;
       }
-      
+
       .navbar-toggler.active .icon-bar:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
       }
@@ -753,11 +756,12 @@
         <div class="feature-card">
           <h3>📖 Giới Thiệu</h3>
           <p>
-            Trong quá trình lập trình Java, lỗi (error) và ngoại lệ (exception) là điều không thể tránh khỏi.  
-            <strong>Java Exception Handling</strong> giúp bạn kiểm soát luồng chương trình khi có sự cố xảy ra — 
-            thay vì để ứng dụng bị dừng đột ngột.  
+            Trong quá trình lập trình Java, lỗi (error) và ngoại lệ (exception) là điều không thể tránh khỏi.
+            <strong>Java Exception Handling</strong> giúp bạn kiểm soát luồng chương trình khi có sự cố xảy ra —
+            thay vì để ứng dụng bị dừng đột ngột.
             <br><br>
-            Việc hiểu rõ cơ chế xử lý ngoại lệ, cách tạo custom exceptions và áp dụng best practices sẽ giúp code của bạn
+            Việc hiểu rõ cơ chế xử lý ngoại lệ, cách tạo custom exceptions và áp dụng best practices sẽ giúp code của
+            bạn
             trở nên <strong>ổn định, dễ bảo trì và thân thiện với người dùng hơn</strong>.
           </p>
         </div>
@@ -765,14 +769,18 @@
         <!-- What is Exception -->
         <h2>1. Khái niệm cơ bản về Exception</h2>
         <p>
-          Một <strong>Exception</strong> là một sự kiện bất thường xảy ra trong quá trình thực thi chương trình, 
+          Một <strong>Exception</strong> là một sự kiện bất thường xảy ra trong quá trình thực thi chương trình,
           làm gián đoạn luồng thực thi bình thường.
           <br><br>
           Java chia exceptions thành 2 loại chính:
         </p>
         <ul>
-          <li><strong>Checked Exceptions</strong> – được kiểm tra tại thời điểm biên dịch (ví dụ: <code>IOException</code>, <code>SQLException</code>).</li>
-          <li><strong>Unchecked Exceptions</strong> – xảy ra tại runtime, thường do lỗi logic (ví dụ: <code>NullPointerException</code>, <code>ArithmeticException</code>).</li>
+          <li><strong>Checked Exceptions</strong> – được kiểm tra tại thời điểm biên dịch (ví dụ:
+            <code>IOException</code>, <code>SQLException</code>).
+          </li>
+          <li><strong>Unchecked Exceptions</strong> – xảy ra tại runtime, thường do lỗi logic (ví dụ:
+            <code>NullPointerException</code>, <code>ArithmeticException</code>).
+          </li>
         </ul>
 
         <div class="diagram-container">
@@ -780,45 +788,46 @@
           <div class="diagram">
             <svg width="100%" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
               <!-- Exception Hierarchy -->
-              <rect x="350" y="20" width="100" height="40" fill="#dc2626" stroke="#b91c1c" stroke-width="2"/>
+              <rect x="350" y="20" width="100" height="40" fill="#dc2626" stroke="#b91c1c" stroke-width="2" />
               <text x="400" y="45" text-anchor="middle" fill="white" font-weight="bold">Throwable</text>
-              
-              <rect x="200" y="80" width="100" height="40" fill="#ef4444" stroke="#dc2626" stroke-width="1"/>
+
+              <rect x="200" y="80" width="100" height="40" fill="#ef4444" stroke="#dc2626" stroke-width="1" />
               <text x="250" y="105" text-anchor="middle" fill="white">Error</text>
-              
-              <rect x="500" y="80" width="100" height="40" fill="#22c55e" stroke="#16a34a" stroke-width="1"/>
+
+              <rect x="500" y="80" width="100" height="40" fill="#22c55e" stroke="#16a34a" stroke-width="1" />
               <text x="550" y="105" text-anchor="middle" fill="white">Exception</text>
-              
-              <rect x="100" y="140" width="100" height="40" fill="#f87171" stroke="#ef4444" stroke-width="1"/>
+
+              <rect x="100" y="140" width="100" height="40" fill="#f87171" stroke="#ef4444" stroke-width="1" />
               <text x="150" y="165" text-anchor="middle" fill="white">VirtualMachineError</text>
-              
-              <rect x="300" y="140" width="100" height="40" fill="#4ade80" stroke="#22c55e" stroke-width="1"/>
+
+              <rect x="300" y="140" width="100" height="40" fill="#4ade80" stroke="#22c55e" stroke-width="1" />
               <text x="350" y="165" text-anchor="middle" fill="white">IOException</text>
-              
-              <rect x="500" y="140" width="100" height="40" fill="#4ade80" stroke="#22c55e" stroke-width="1"/>
+
+              <rect x="500" y="140" width="100" height="40" fill="#4ade80" stroke="#22c55e" stroke-width="1" />
               <text x="550" y="165" text-anchor="middle" fill="white">SQLException</text>
-              
-              <rect x="700" y="140" width="100" height="40" fill="#86efac" stroke="#4ade80" stroke-width="1"/>
+
+              <rect x="700" y="140" width="100" height="40" fill="#86efac" stroke="#4ade80" stroke-width="1" />
               <text x="750" y="165" text-anchor="middle" fill="white">RuntimeException</text>
-              
-              <rect x="600" y="200" width="100" height="40" fill="#bbf7d0" stroke="#86efac" stroke-width="1"/>
+
+              <rect x="600" y="200" width="100" height="40" fill="#bbf7d0" stroke="#86efac" stroke-width="1" />
               <text x="650" y="225" text-anchor="middle" fill="white">NullPointerException</text>
-              
-              <rect x="800" y="200" width="100" height="40" fill="#bbf7d0" stroke="#86efac" stroke-width="1"/>
+
+              <rect x="800" y="200" width="100" height="40" fill="#bbf7d0" stroke="#86efac" stroke-width="1" />
               <text x="850" y="225" text-anchor="middle" fill="white">ArithmeticException</text>
-              
+
               <!-- Lines -->
-              <path d="M400 60 L250 80" stroke="#333" stroke-width="2" fill="none"/>
-              <path d="M400 60 L550 80" stroke="#333" stroke-width="2" fill="none"/>
-              <path d="M250 120 L150 140" stroke="#333" stroke-width="2" fill="none"/>
-              <path d="M550 120 L350 140" stroke="#333" stroke-width="2" fill="none"/>
-              <path d="M550 120 L550 140" stroke="#333" stroke-width="2" fill="none"/>
-              <path d="M550 120 L750 140" stroke="#333" stroke-width="2" fill="none"/>
-              <path d="M750 180 L650 200" stroke="#333" stroke-width="2" fill="none"/>
-              <path d="M750 180 L850 200" stroke="#333" stroke-width="2" fill="none"/>
+              <path d="M400 60 L250 80" stroke="#333" stroke-width="2" fill="none" />
+              <path d="M400 60 L550 80" stroke="#333" stroke-width="2" fill="none" />
+              <path d="M250 120 L150 140" stroke="#333" stroke-width="2" fill="none" />
+              <path d="M550 120 L350 140" stroke="#333" stroke-width="2" fill="none" />
+              <path d="M550 120 L550 140" stroke="#333" stroke-width="2" fill="none" />
+              <path d="M550 120 L750 140" stroke="#333" stroke-width="2" fill="none" />
+              <path d="M750 180 L650 200" stroke="#333" stroke-width="2" fill="none" />
+              <path d="M750 180 L850 200" stroke="#333" stroke-width="2" fill="none" />
             </svg>
           </div>
-          <p class="caption">Phân cấp Exception trong Java - Màu đỏ: Error, Xanh lá: Checked Exception, Xanh nhạt: Unchecked Exception</p>
+          <p class="caption">Phân cấp Exception trong Java - Màu đỏ: Error, Xanh lá: Checked Exception, Xanh nhạt:
+            Unchecked Exception</p>
         </div>
 
         <blockquote>
@@ -828,8 +837,8 @@
         <!-- Try-Catch-Finally -->
         <h2>2. Cấu trúc try–catch–finally</h2>
         <p>
-          Java cung cấp khối <code>try–catch</code> để bắt và xử lý ngoại lệ.  
-          Ngoài ra, khối <code>finally</code> luôn được thực thi — kể cả khi có lỗi hay không — 
+          Java cung cấp khối <code>try–catch</code> để bắt và xử lý ngoại lệ.
+          Ngoài ra, khối <code>finally</code> luôn được thực thi — kể cả khi có lỗi hay không —
           giúp bạn giải phóng tài nguyên như kết nối file, database, hoặc stream.
         </p>
         <pre><code>public class TryCatchExample {
@@ -847,15 +856,17 @@
         <div class="feature-card">
           <h4>💡 Lời Khuyên Thực Tế</h4>
           <p>
-            Hãy luôn dùng <code>finally</code> (hoặc <code>try-with-resources</code>) để đảm bảo tài nguyên được đóng đúng cách.
+            Hãy luôn dùng <code>finally</code> (hoặc <code>try-with-resources</code>) để đảm bảo tài nguyên được đóng
+            đúng cách.
           </p>
         </div>
 
         <!-- Custom Exception -->
         <h2>3. Tạo Custom Exception</h2>
         <p>
-          Đôi khi, bạn cần định nghĩa lỗi riêng phù hợp với logic nghiệp vụ của mình.  
-          Khi đó, có thể tạo <strong>Custom Exception</strong> bằng cách kế thừa lớp <code>Exception</code> hoặc <code>RuntimeException</code>.
+          Đôi khi, bạn cần định nghĩa lỗi riêng phù hợp với logic nghiệp vụ của mình.
+          Khi đó, có thể tạo <strong>Custom Exception</strong> bằng cách kế thừa lớp <code>Exception</code> hoặc
+          <code>RuntimeException</code>.
         </p>
         <pre><code>class InvalidAgeException extends Exception {
     public InvalidAgeException(String message) {
@@ -885,7 +896,8 @@ public class CustomExceptionDemo {
         <!-- Multi-Catch -->
         <h2>4. Multi-Catch & Nested Try</h2>
         <p>
-          Khi có nhiều loại lỗi có thể xảy ra, bạn có thể dùng <strong>multi-catch</strong> hoặc <strong>nested try</strong> để xử lý chi tiết từng trường hợp.
+          Khi có nhiều loại lỗi có thể xảy ra, bạn có thể dùng <strong>multi-catch</strong> hoặc <strong>nested
+            try</strong> để xử lý chi tiết từng trường hợp.
         </p>
         <pre><code>public class MultiCatchExample {
     public static void main(String[] args) {
@@ -970,38 +982,40 @@ public class ReadFileExample {
           <div class="diagram">
             <svg width="100%" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
               <!-- Flow Diagram -->
-              <rect x="350" y="50" width="100" height="40" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
+              <rect x="350" y="50" width="100" height="40" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2" />
               <text x="400" y="75" text-anchor="middle" fill="white" font-weight="bold">Bắt đầu</text>
-              
-              <rect x="350" y="120" width="100" height="40" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+
+              <rect x="350" y="120" width="100" height="40" fill="#f59e0b" stroke="#d97706" stroke-width="2" />
               <text x="400" y="145" text-anchor="middle" fill="white" font-weight="bold">Khối try</text>
-              
-              <rect x="200" y="190" width="100" height="40" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+
+              <rect x="200" y="190" width="100" height="40" fill="#ef4444" stroke="#dc2626" stroke-width="2" />
               <text x="250" y="215" text-anchor="middle" fill="white">Exception xảy ra?</text>
-              
-              <rect x="500" y="190" width="100" height="40" fill="#22c55e" stroke="#16a34a" stroke-width="2"/>
+
+              <rect x="500" y="190" width="100" height="40" fill="#22c55e" stroke="#16a34a" stroke-width="2" />
               <text x="550" y="215" text-anchor="middle" fill="white">Không có lỗi</text>
-              
-              <rect x="200" y="260" width="100" height="40" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+
+              <rect x="200" y="260" width="100" height="40" fill="#f59e0b" stroke="#d97706" stroke-width="2" />
               <text x="250" y="285" text-anchor="middle" fill="white">Khối catch</text>
-              
-              <rect x="500" y="260" width="100" height="40" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+
+              <rect x="500" y="260" width="100" height="40" fill="#f59e0b" stroke="#d97706" stroke-width="2" />
               <text x="550" y="285" text-anchor="middle" fill="white">Tiếp tục</text>
-              
-              <rect x="350" y="330" width="100" height="40" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+
+              <rect x="350" y="330" width="100" height="40" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2" />
               <text x="400" y="355" text-anchor="middle" fill="white" font-weight="bold">Khối finally</text>
-              
+
               <!-- Lines and arrows -->
-              <path d="M400 90 L400 120" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
-              <path d="M400 160 L400 190" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
-              <path d="M250 230 L250 260" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
-              <path d="M550 230 L550 260" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
-              <path d="M250 300 L325 300 L325 330" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
-              <path d="M550 300 L475 300 L475 330" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
-              
+              <path d="M400 90 L400 120" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+              <path d="M400 160 L400 190" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+              <path d="M250 230 L250 260" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+              <path d="M550 230 L550 260" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+              <path d="M250 300 L325 300 L325 330" stroke="#333" stroke-width="2" fill="none"
+                marker-end="url(#arrowhead)" />
+              <path d="M550 300 L475 300 L475 330" stroke="#333" stroke-width="2" fill="none"
+                marker-end="url(#arrowhead)" />
+
               <defs>
                 <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                  <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+                  <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
                 </marker>
               </defs>
             </svg>
@@ -1012,15 +1026,18 @@ public class ReadFileExample {
         <!-- Conclusion -->
         <h2>8. Tổng kết</h2>
         <p>
-          Exception Handling là kỹ năng quan trọng giúp bạn viết ứng dụng Java an toàn và đáng tin cậy hơn.  
-          Biết cách sử dụng <code>try-catch</code>, <code>throw</code>, <code>throws</code> và custom exception đúng lúc sẽ giúp bạn kiểm soát luồng lỗi linh hoạt.  
+          Exception Handling là kỹ năng quan trọng giúp bạn viết ứng dụng Java an toàn và đáng tin cậy hơn.
+          Biết cách sử dụng <code>try-catch</code>, <code>throw</code>, <code>throws</code> và custom exception đúng lúc
+          sẽ giúp bạn kiểm soát luồng lỗi linh hoạt.
           <br><br>
-          👉 Hãy luyện tập bằng cách cố tình tạo lỗi trong chương trình nhỏ, sau đó xử lý chúng theo nhiều cách khác nhau — 
+          👉 Hãy luyện tập bằng cách cố tình tạo lỗi trong chương trình nhỏ, sau đó xử lý chúng theo nhiều cách khác
+          nhau —
           bạn sẽ nhanh chóng hiểu sâu hơn về cơ chế Exception trong Java.
         </p>
 
         <blockquote>
-          <p>"Xử lý ngoại lệ tốt không chỉ làm chương trình chạy ổn định — mà còn giúp người dùng tin tưởng sản phẩm của bạn."</p>
+          <p>"Xử lý ngoại lệ tốt không chỉ làm chương trình chạy ổn định — mà còn giúp người dùng tin tưởng sản phẩm của
+            bạn."</p>
         </blockquote>
 
         <!-- Call to Action -->
@@ -1044,7 +1061,7 @@ public class ReadFileExample {
   <!-- Footer -->
   <section class="footer">
     <div class="container">
-      
+
       <div class="sociale-icon">
         <ul>
           <li>
@@ -1095,21 +1112,21 @@ public class ReadFileExample {
     });
 
     // Toggle navbar on mobile
-    document.getElementById('navbarToggle').addEventListener('click', function() {
+    document.getElementById('navbarToggle').addEventListener('click', function () {
       const navList = document.getElementById('mainNav');
       const toggleButton = this;
-      
+
       navList.classList.toggle('active');
       toggleButton.classList.toggle('active');
     });
 
     // Close menu when clicking outside on mobile
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
       const navList = document.getElementById('mainNav');
       const toggleButton = document.getElementById('navbarToggle');
       const isClickInsideNav = navList.contains(event.target);
       const isClickOnToggle = toggleButton.contains(event.target);
-      
+
       if (window.innerWidth <= 768 && !isClickInsideNav && !isClickOnToggle) {
         navList.classList.remove('active');
         toggleButton.classList.remove('active');
@@ -1117,10 +1134,10 @@ public class ReadFileExample {
     });
 
     // Close menu when window is resized to desktop size
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
       const navList = document.getElementById('mainNav');
       const toggleButton = document.getElementById('navbarToggle');
-      
+
       if (window.innerWidth > 768) {
         navList.classList.remove('active');
         toggleButton.classList.remove('active');
